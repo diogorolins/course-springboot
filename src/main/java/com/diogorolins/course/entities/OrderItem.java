@@ -41,11 +41,15 @@ public class OrderItem implements Serializable{
 		this.id.setOrder(order);
 	}
 	
+	public Double getSubTotal() {
+		return price * quantity;
+	}
+	
 	public Product getProduct() {
 		return id.getProduct();
 	}
 	
-	public void seProducgt(Product product) {
+	public void setProduct(Product product) {
 		this.id.setProduct(product);
 	}
 
