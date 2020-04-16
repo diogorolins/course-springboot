@@ -22,7 +22,7 @@ import com.diogorolins.course.repositories.ProductRepository;
 import com.diogorolins.course.repositories.UserRepository;
 
 @Configuration
-@Profile("test")
+@Profile("dev")
 public class TestConfig implements CommandLineRunner {
 
 	@Autowired
