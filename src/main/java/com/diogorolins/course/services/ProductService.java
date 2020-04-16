@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.diogorolins.course.entities.Product;
 import com.diogorolins.course.repositories.ProductRepository;
 import com.diogorolins.course.services.exceptions.DatabaseException;
+import com.diogorolins.course.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ProductService {
@@ -24,7 +25,7 @@ public class ProductService {
 	public Product findById(Long id) {
 		
 		Optional<Product> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Product insert(Product obj) {
